@@ -8,7 +8,8 @@
 
 ## Descritpion
 Our team decided to build not just a clock, but **THE Clock**. We built your typical clock features into it, like a stopwatch, a timer, an alarm, and of course, a digital clock. Our Clock is not using any external peripherals, just the Nexys A7 50-T board and it's built in seven segment display and buttons. 
-But what do each of the buttons do?
+
+But what do each of the buttons do? It's quite simple :
 1. Left and Right buttons are for changing modes
 2. Up and Down buttons are for setting the time
 3. Center button is for activating the functions
