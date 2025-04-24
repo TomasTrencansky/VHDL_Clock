@@ -1,5 +1,7 @@
 # THE CLOCK
+"here i would put my poster"
 
+"IF I HAD IT FINISHED!
 ## Team Members :
 1. Matej Nachtnebel (responsible for connecting the modules together)
 2. Tomáš Trenčanský (responsible for graphical output and organization)
@@ -21,4 +23,25 @@ We also built in the function where if you hold the button for a few the speed o
 
 "IF I HAD ANY"
 
-## Individual components
+# Individual components
+## Input
+We also used component [Clock enable](https://github.com/tomas-fryza/vhdl-labs/blob/master/solutions/lab5-counter/clock_en.vhd) which was covered in class and therefore won't be shown here
+### UD counter
+description
+
+simulation
+
+### Mode
+description
+
+simulation
+
+### Speed up
+description
+
+simulation
+
+### Change
+description
+
+simulation
