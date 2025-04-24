@@ -31,7 +31,7 @@ description
 
 simulation
 
-### Mode
+### [Mode](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Mode/Mode.vhd)
 description
 
 simulation
