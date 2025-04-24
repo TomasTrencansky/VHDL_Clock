@@ -15,3 +15,10 @@ But what do each of the buttons do? It's quite simple :
 3. Center button is for activating the functions
 
 We also built in the function where if you hold the button for a few the speed of change increases.
+
+## Schematic
+"here would be a very amazing schematic"
+
+"IF I HAD ANY"
+
+## Individual components
