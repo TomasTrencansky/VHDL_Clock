@@ -2,4 +2,4 @@
 
 
 
-0.jpg
+(images/0.jpg)
