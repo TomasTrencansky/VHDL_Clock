@@ -27,21 +27,21 @@ We also built in the function where if you hold the button for a few the speed o
 ## Input
 We also used component [Clock enable](https://github.com/tomas-fryza/vhdl-labs/blob/master/solutions/lab5-counter/clock_en.vhd) which was covered in class and therefore won't be shown here
 ### [UD counter](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/UD%20counter/UD_counter.vhd)
-description
+changes mode of the clock
 
-simulation
+![UD counter_sim](images/UD_counter_waveform.png)
 
 ### [Mode](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Mode/Mode.vhd)
-description
+counts up and down
 
-simulation
+![mode_sim](images/Mode_waveform.png)
 
-### [Speed up]()
-description
+### [Speed up](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Speed%20up/Speedup.vhd)
+Speeds up change when you hold
 
-simulation
+![speedup_sim](images/Speedup_waveform.png)
 
-### [Change]()
-description
+### [Change](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Change/Change.vhd)
+Allows you to set the time on different modes
 
-simulation
+![change sim](images/Change_waveform.png)
