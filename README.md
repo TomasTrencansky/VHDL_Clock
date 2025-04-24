@@ -1,6 +1,6 @@
 # THE CLOCK
 
-![poster](images/poster_temp.jpg)
+![poster](images/poster_temp.jpg) 
 
 ## Team Members :
 1. Matej Nachtnebel (responsible for connecting the modules together)
