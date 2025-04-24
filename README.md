@@ -12,4 +12,5 @@ But what do each of the buttons do?
 1. Left and Right buttons are for changing modes
 2. Up and Down buttons are for setting the time
 3. Center button is for activating the functions
+
 We also built in the function where if you hold the button for a few the speed of change increases.
