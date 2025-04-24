@@ -26,7 +26,7 @@ We also built in the function where if you hold the button for a few the speed o
 # Individual components
 ## Input
 We also used component [Clock enable](https://github.com/tomas-fryza/vhdl-labs/blob/master/solutions/lab5-counter/clock_en.vhd) which was covered in class and therefore won't be shown here
-### UD counter
+### [UD counter](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/UD%20counter/UD_counter.vhd)
 description
 
 simulation
@@ -36,12 +36,12 @@ description
 
 simulation
 
-### Speed up
+### [Speed up]()
 description
 
 simulation
 
-### Change
+### [Change]()
 description
 
 simulation
