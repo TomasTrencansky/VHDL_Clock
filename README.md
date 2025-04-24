@@ -1,6 +1,6 @@
 # THE CLOCK
 
-![poster](poster_temp.jpg)
+![poster](images/poster_temp.jpg)
 
 ## Team Members :
 1. Matej Nachtnebel (responsible for connecting the modules together)
@@ -19,10 +19,7 @@ But what do each of the buttons do? It's quite simple :
 We also built in the function where if you hold the button for a few the speed of change increases.
 
 ## Schematic
-"here would be a very amazing schematic"
-
-"IF I HAD ANY"
-
+![schema](images/shematic_temp.jpg)
 # Individual components
 We also used component [Clock enable](https://github.com/tomas-fryza/vhdl-labs/blob/master/solutions/lab5-counter/clock_en.vhd) which was covered in class and therefore won't be shown here
 
