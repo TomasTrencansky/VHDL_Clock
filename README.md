@@ -1,7 +1,7 @@
 # THE CLOCK
-"here i would put my poster"
 
-"IF I HAD IT FINISHED!
+![poster](poster_temp.jpg)
+
 ## Team Members :
 1. Matej Nachtnebel (responsible for connecting the modules together)
 2. Tomáš Trenčanský (responsible for graphical output and organization)
