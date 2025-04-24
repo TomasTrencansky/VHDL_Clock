@@ -24,8 +24,14 @@ We also built in the function where if you hold the button for a few the speed o
 "IF I HAD ANY"
 
 # Individual components
-## Input
 We also used component [Clock enable](https://github.com/tomas-fryza/vhdl-labs/blob/master/solutions/lab5-counter/clock_en.vhd) which was covered in class and therefore won't be shown here
+
+## [Input](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/input/Input.vhd)
+description which will be written later (propably)
+
+Here be an amazing simulation image (which is being worked on currently)
+
+**Input contains several individual components which are listed below**
 ### [UD counter](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/UD%20counter/UD_counter.vhd)
 changes mode of the clock
 
