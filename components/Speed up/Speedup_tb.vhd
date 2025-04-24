@@ -1,8 +1,3 @@
--- Testbench automatically generated online
--- at https://vhdl.lapinoo.net
--- Generation date : Tue, 22 Apr 2025 12:48:15 GMT
--- Request id : cfwk-fed377c2-6807900f5ed21
-
 library ieee;
 use ieee.std_logic_1164.all;
 
