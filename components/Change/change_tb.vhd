@@ -1,8 +1,3 @@
--- Testbench automatically generated online
--- at https://vhdl.lapinoo.net
--- Generation date : Mon, 21 Apr 2025 15:06:52 GMT
--- Request id : cfwk-fed377c2-68065f0cdd9ed
-
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -33,7 +28,7 @@ architecture tb of tb_Change is
     signal change_2      : std_logic;
     signal change_active : std_logic;
 
-    constant TbPeriod : time := 10 ns; -- ***EDIT*** Put right period here
+    constant TbPeriod : time := 10 ns; 
     signal TbClock : std_logic := '0';
     signal TbSimEnded : std_logic := '0';
 
@@ -50,20 +45,19 @@ begin
               change_2      => change_2,
               change_active => change_active);
 
-    -- Clock generation
+
     TbClock <= not TbClock after TbPeriod/2 when TbSimEnded /= '1' else '0';
 
-    -- ***EDIT*** Check that clk is really your main clock signal
+
     clk <= TbClock;
 
     stimuli : process
     begin
-        -- ***EDIT*** Adapt initialization as needed
+        
         Btn_1 <= '0';
         Btn_2 <= '0';
         mode  <= "00";
-        -- Reset generation
-        -- ***EDIT*** Check that rst is really your reset signal
+
         rst <= '1';
         wait for 100 ns;
         rst <= '0';
@@ -91,10 +85,9 @@ begin
         mode <= "10";
         
         wait for 10 * TbPeriod;  
-        -- ***EDIT*** Add stimuli here
+
         wait for 100 * TbPeriod;
 
-        -- Stop the clock and hence terminate the simulation
         TbSimEnded <= '1';
         wait;
     end process;
