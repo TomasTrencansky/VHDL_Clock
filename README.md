@@ -35,7 +35,17 @@ changes mode of the clock
 ![UD counter_sim](images/UD_counter_waveform.png)
 
 ### [Mode](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Mode/Mode.vhd)
-counts up and down
+UD counter is simple synchronous counter which has 5 inputs and one output. You can easily configure range of counting by setting generic value called NBITS. This range is allways 2^NBITS. 
+
+Inputs 
+clk - input for clock signal 
+en - if one enables counting 
+add- if one then every rising edge of clk adds one
+sub- if one then every rising edge of clk adds one
+
+Output 
+count - current number of counter
+
 
 ![mode_sim](images/Mode_waveform.png)
 
