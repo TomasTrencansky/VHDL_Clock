@@ -43,9 +43,26 @@ Output :
 ![UD counter_sim](images/UD_counter_waveform_V3.png)
 
 ### [Mode](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Mode/Mode.vhd)
+Mode is made of 2 different components which work together to switch betweeen modes of clock after long press of Left or Right buttons. It has 4 inputs and one output.  It is set up to count from 0 to 2, because clock has 3 modes.
+Modes:
+* Clock & Alarm "00"  (0)
+* Stopwatch "01"      (1)
+* Timer "10"          (2)
 
+Inputs
+* clk = input for clock signal
+* en = enables change of mode 
+* btnl = input for button left
+* btnr = input for button right
+Output
+* current_mode = outputs 2 bits with value between 0 and 2 
+
+Componets:
+* UD_counter - simple use of counter to keep track of mode 
+* clock_enable - used for dection of long press
 
 ![mode_sim](images/Mode_waveform.png)
+
 
 ### [Speed up](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Speed%20up/Speedup.vhd)
 Speeds up change when you hold
