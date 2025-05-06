@@ -43,7 +43,7 @@ Output :
 ![UD counter_sim](images/UD_counter_waveform_V3.png)
 
 ### [Mode](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Mode/Mode.vhd)
-Mode is made of 2 different components which work together to switch betweeen modes of clock after long press of Left or Right buttons. It has 4 inputs and one output.  It is set up to count from 0 to 2, because clock has 3 modes.
+Mode is made of 2 different components which work together to switch betweeen modes of clock after long press of Left or Right buttons. It has 4 inputs and one output.  It is set up to count from 0 to 2, because clock has 3 modes. Duration of needed press is easily adjustable by generic value of Long_press_time ( 1s = 200 000 000 for clock 10 MHz)
 Modes:
 * Clock & Alarm "00"  (0)
 * Stopwatch "01"      (1)
