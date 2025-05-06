@@ -110,4 +110,4 @@ Inputs:
 Output:
 * Edge_detected = output of pulses 
 
-![Edge_detector sim](images/Speedup_waveform_V2.png)
+![Edge_detector sim](images/Edge_detector_waveform_V2.png)
