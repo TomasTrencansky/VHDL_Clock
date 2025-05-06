@@ -30,11 +30,6 @@ Here be an amazing simulation image (which is being worked on currently)
 
 **Input contains several individual components which are listed below**
 ### [UD counter](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/UD%20counter/UD_counter.vhd)
-changes mode of the clock
-
-![UD counter_sim](images/UD_counter_waveform.png)
-
-### [Mode](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Mode/Mode.vhd)
 UD counter is simple synchronous counter which has 5 inputs and one output. You can easily configure range of counting by setting generic value called NBITS. This range is allways 2^NBITS. 
 
 Inputs :
@@ -45,9 +40,12 @@ Inputs :
 
 Output :
 * count - current number of counter
+![UD counter_sim](images/UD_counter_waveform_V3.png)
+
+### [Mode](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Mode/Mode.vhd)
 
 
-![mode_sim](images/Mode_waveform_V3.png)
+![mode_sim](images/Mode_waveform.png)
 
 ### [Speed up](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Speed%20up/Speedup.vhd)
 Speeds up change when you hold
