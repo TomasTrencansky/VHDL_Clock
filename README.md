@@ -38,10 +38,10 @@ changes mode of the clock
 UD counter is simple synchronous counter which has 5 inputs and one output. You can easily configure range of counting by setting generic value called NBITS. This range is allways 2^NBITS. 
 
 Inputs :
-clk - input for clock signal 
-en - if one enables counting 
-add- if one then every rising edge of clk adds one
-sub- if one then every rising edge of clk adds one
+* clk - input for clock signal 
+* en - if one enables counting 
+* add- if one then every rising edge of clk adds one
+* sub- if one then every rising edge of clk adds one
 
 Output :
 count - current number of counter
