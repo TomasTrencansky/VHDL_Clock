@@ -108,7 +108,7 @@ Output
 
 ### [Change](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Change/Change.vhd)
 Depending on inputs sets right outputs to '1' until they are rest to '0' by rst input. Only one of change outputs (0,1,2) can be '1' at one time.
-Coponent change has 5 inputs and 4 outputs. 
+Component change has 5 inputs and 4 outputs. 
 
 Inputs
 * clk = input for clock signal
