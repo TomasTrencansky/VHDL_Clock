@@ -1,7 +1,6 @@
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+ 
 entity Mode is
     Generic (
                 Long_press_time : integer := 200_000_000 
@@ -11,16 +10,11 @@ entity Mode is
            btn_l : in STD_LOGIC;
            btn_r : in STD_LOGIC;
            CLK100MHZ : in STD_LOGIC;
-           
            --p_test : out std_logic;
            --p_test2 : out std_logic;
-           
-           m : out std_logic_vector(1 downto 0)
+           current_mode : out std_logic_vector(1 downto 0)
             );
 end Mode;
-
-
-
 
 architecture Behavioral of Mode is
 
@@ -34,13 +28,9 @@ component UD_counter
            sub : in STD_LOGIC;
            clk : in std_logic;
            rst: in std_logic;
-           v : out STD_LOGIC_VECTOR (NBITS-1 downto 0)
-          
-           
-           );
-           
-       
-         
+           count : out STD_LOGIC_VECTOR (NBITS-1 downto 0)
+          );
+        
 end component;
 
 component clock_enable
@@ -88,9 +78,9 @@ Switcher : UD_counter
            sub => psub,
            clk =>CLK100MHZ,
            rst => '0',
-           v =>smode
+           count =>smode
   );
-m <= smode; 
+current_mode <= smode; 
 srst <= (smode(1) AND smode(0)); 
 
 btn_in_l <= Not(btn_l);
