@@ -1,15 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity Input is
     Generic
     ( 
@@ -38,12 +29,21 @@ end Input;
 
 architecture Behavioral of Input is
 
+component Edge_detector 
+Port (
+        Sig_in: in std_logic;
+        clk : in std_logic; 
+        Edge_detected: out std_logic
+        
+     );
+     end component;
+
 component Change
 Port ( clk : in std_logic;
-           Btn_1 : in STD_LOGIC;  --  long UP / Down button
-           Btn_2 : in STD_LOGIC;  -- long C button
+           Input_pulse_1  : in STD_LOGIC;  --  long UP / Down button
+           Input_pulse_2 : in STD_LOGIC;  -- long C button
            rst : in STD_LOGIC;    -- C button
-           mode: in std_logic_vector (1 downto 0);
+           current_mode: in std_logic_vector (1 downto 0);
            change_0 : out STD_LOGIC;
            change_1 : out STD_LOGIC;
            change_2 : out std_logic;
@@ -68,7 +68,7 @@ Generic (
            btn_l : in STD_LOGIC;
            btn_r : in STD_LOGIC;
            CLK100MHZ : in STD_LOGIC;
-           m : out std_logic_vector(1 downto 0)
+           current_mode : out std_logic_vector(1 downto 0)
            
             );
  end component;
@@ -97,6 +97,7 @@ signal change_active: std_logic;
 signal sig_mode: std_logic_vector (1 downto 0);
 signal up_down_or: std_logic;
 signal en_mode:std_logic ;
+signal speedup_reset: std_logic;
 
 begin
 en_mode <= not(change_active);
@@ -146,7 +147,7 @@ S4_speed => S3_speed
 Port map
 ( clk =>CLK100MHZ,
   Btn =>BTNU,
-  rst =>change_active,
+  rst =>speedup_reset,
   pulse =>time_add);
 
 Speed_up_d: Speedup
@@ -161,7 +162,7 @@ S4_speed => S3_speed
 Port map
 ( clk =>CLK100MHZ,
   Btn =>BTND,
-  rst =>change_active,
+  rst =>speedup_reset,
   pulse =>time_sub);
   
 -- Mode switch 
@@ -174,7 +175,7 @@ Generic map (
            btn_l => BTNL,
            btn_r => BTNR,
            CLK100MHZ => CLK100MHZ,
-           m => sig_mode  
+           current_mode => sig_mode  
             );
             
  mode_out <= sig_mode;
@@ -182,16 +183,25 @@ Generic map (
 change_processor: Change 
 Port map 
 ( clk => CLK100MHZ,
-  Btn_1 => up_down_or,
-  Btn_2 => long_c,  -- long C button
+  Input_pulse_1  => up_down_or,
+  Input_pulse_2 => long_c,  -- long C button
   rst => BTNC,  -- C button
-  mode => sig_mode,
+  current_mode => sig_mode,
   change_0 => change_en_clock,
   change_1 =>change_en_alarm,
   change_2 =>change_en_timer,
   change_active => change_active);
 
+change_active_edge_detect: Edge_detector
+port map   
+(
+Sig_in =>change_active,
+clk => CLK100MHZ,
+Edge_detected => speedup_reset
+
+);
 
  change_blink <= change_active;
+ 
 end Behavioral;
  
