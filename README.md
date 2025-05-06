@@ -24,11 +24,36 @@ We also built in the function where if you hold the button for a few the speed o
 We also used component [Clock enable](https://github.com/tomas-fryza/vhdl-labs/blob/master/solutions/lab5-counter/clock_en.vhd) which was covered in class and therefore won't be shown here
 
 ## [Input](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/input/Input.vhd)
-description which will be written later (propably)
+This component processes button inputs for clock and generates controlling signals for the rest of components for example clock, alarm, timer ... It consists of 5 components. Some of them are used multiple times. It has 6 inputs and 7 outputs. 
+Components:
+* Edge_detector
+* Change
+* Mode
+* Speed up
+* clock enable
 
-Here be an amazing simulation image (which is being worked on currently)
+Inputs:
+* BNTU = up buttton input
+* BTND = down button input
+* BTNL = left button input 
+* BTNR = right button input
+* BTNC = center button input
+* CLK100MHz = clock input
 
-**Input contains several individual components which are listed below**
+![Input_sim](images/Input_waveform_V1.png)
+
+![Input_design](images/Input_design_V1.png)
+
+
+Outputs:
+* change_en_timer = signal which enables change time for timer
+* change_en_clock = signal which enables change time for clock 
+* change_en_alarm = signal which enables change time for alarm
+* change_blink = is '1' when change of clock, alarm or clock are '1'
+* time_sub = signal for subtracting time
+* time_add = signal for adding time
+* mode_out = outputs current mode of clock 
+
 ### [UD counter](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/UD%20counter/UD_counter.vhd)
 UD counter is simple synchronous counter which has 5 inputs and one output. You can easily configure range of counting by setting generic value called NBITS. This range is allways 2^NBITS. 
 
