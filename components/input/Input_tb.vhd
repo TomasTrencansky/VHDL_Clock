@@ -1,8 +1,3 @@
--- Testbench automatically generated online
--- at https://vhdl.lapinoo.net
--- Generation date : Thu, 24 Apr 2025 13:07:50 GMT
--- Request id : cfwk-fed377c2-680a37a618f00
-
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -52,7 +47,7 @@ architecture tb of tb_Input is
     signal time_sub        : std_logic;
     signal change_blink    : std_logic;
 
-    constant TbPeriod : time := 10 ns; -- ***EDIT*** Put right period here
+    constant TbPeriod : time := 10 ns;
     signal TbClock : std_logic := '0';
     signal TbSimEnded : std_logic := '0';
 
@@ -84,35 +79,38 @@ begin
 
     -- Clock generation
     TbClock <= not TbClock after TbPeriod/2 when TbSimEnded /= '1' else '0';
-
-    -- ***EDIT*** Check that CLK100MHZ is really your main clock signal
     CLK100MHZ <= TbClock;
 
     stimuli : process
     begin
-        -- ***EDIT*** Adapt initialization as needed
         BTNU <= '0';
         BTNC <= '0';
         BTND <= '0';
         BTNL <= '0';
         BTNR <= '0';
-        
         wait for 1 * TbPeriod;
         BTNU<='1';
-        
-        
-     
-        -- ***EDIT*** Add stimuli here
+        wait for 25 * TbPeriod;
+        BTNU<='0';
+        wait for 2 * TbPeriod;
+        BTNU<='1';
+        BTNL<='1';
+        wait for 7 * TbPeriod;
+        BTNU<='0';
+        BTNL<='0';
+        BTNC<='1';
+        wait for 25 * TbPeriod;        
+        BTNC<='0';
+        BTNL<='1';
+        wait for 25 * TbPeriod;  
+        BTNL<='0';
+        BTNU<='1';
         wait for 100 * TbPeriod;
-
-        -- Stop the clock and hence terminate the simulation
         TbSimEnded <= '1';
         wait;
     end process;
 
 end tb;
-
--- Configuration block below is required by some simulators. Usually no need to edit.
 
 configuration cfg_tb_Input of tb_Input is
     for tb
