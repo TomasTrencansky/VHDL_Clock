@@ -97,6 +97,17 @@ Outputs
 * change_1 = changes to '1' if mode is '00' and Input_pulse_2 is '1' 
 * change_2 = changes to '1' if mode is '10' and Input_pulse_1 is '1' 
 * change_active = when one of changes (1,2,3) is '1' change_active is also '1'
-
   
 ![change sim](images/Change_waveform_V2.png)
+
+### [Edge Detector](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Edge%20Detector/Edge_detector.vhd)
+Simple component which generates one pulse on rising edge of input signal. It has 2 inputs and 1 output
+
+Inputs:
+* Sig_in = input for signal 
+* clk = input for clock signal
+
+Output:
+Edge_detected = output of pulses 
+
+[Edge_detector sim](images/Speedup_waveform.png)
