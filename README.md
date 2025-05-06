@@ -68,11 +68,32 @@ Componets:
 
 
 ### [Speed up](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Speed%20up/Speedup.vhd)
-Speeds up change when you hold
+Speed up is simple component which with duration of btn input increases number of generated pulses. It has 4 speeds of pluse generation. 
+Duration and periods after which it genenrates pulses are easily configurable by generics. It has 3 inputs and sigle output for pulses. 
 
+Inputs
+* clk = input for clock signal
+* Btn = input signal
+* rst = resets speed to frist level
+
+Output
+* pulse
 ![speedup_sim](images/Speedup_waveform.png)
 
 ### [Change](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Change/Change.vhd)
-Allows you to set the time on different modes
+Depending on inputs sets right outputs to '1' until they are rest to '0' by rst input. Only one of change outputs (0,1,2) can be '1' at one time.
+Coponent change has 5 inputs and 4 outputs. 
 
+Inputs
+*clk = input for clock signal
+*Input_pulse_1 = input signal
+*Input_pulse_2 = input signal
+*rst = sets all outputs to '0'
+*current_mode= 2bit input signal 
+
+Outputs
+* change_0 = changes to '1' if mode is '00' and Input_pulse_1 is '1' 
+* change_1 = changes to '1' if mode is '00' and Input_pulse_2 is '1' 
+* change_2 = changes to '1' if mode is '10' and Input_pulse_1 is '1' 
+* change_active = when one of changes (1,2,3) is '1' change_active is also '1'
 ![change sim](images/Change_waveform.png)
