@@ -62,6 +62,7 @@ Componets:
 * clock_enable - used for dection of long press
 
 ![mode_sim](images/Mode_waveform_V2.png)
+
 ![mode_des](images/Mode_design_V1.png)
 
 
@@ -96,4 +97,6 @@ Outputs
 * change_1 = changes to '1' if mode is '00' and Input_pulse_2 is '1' 
 * change_2 = changes to '1' if mode is '10' and Input_pulse_1 is '1' 
 * change_active = when one of changes (1,2,3) is '1' change_active is also '1'
+
+  
 ![change sim](images/Change_waveform_V2.png)
