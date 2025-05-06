@@ -85,11 +85,11 @@ Depending on inputs sets right outputs to '1' until they are rest to '0' by rst 
 Coponent change has 5 inputs and 4 outputs. 
 
 Inputs
-*clk = input for clock signal
-*Input_pulse_1 = input signal
-*Input_pulse_2 = input signal
-*rst = sets all outputs to '0'
-*current_mode= 2bit input signal 
+* clk = input for clock signal
+* Input_pulse_1 = input signal
+* Input_pulse_2 = input signal
+* rst = sets all outputs to '0'
+* current_mode= 2bit input signal 
 
 Outputs
 * change_0 = changes to '1' if mode is '00' and Input_pulse_1 is '1' 
