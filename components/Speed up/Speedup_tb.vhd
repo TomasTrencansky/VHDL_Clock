@@ -29,10 +29,10 @@ architecture tb of tb_Speedup is
     signal Btn   : std_logic;
     signal rst   : std_logic;
     signal pulse : std_logic;
-   -- signal TEST1: integer ;
-   --signal TEST2:  integer ;
+   -- signal TEST1:  integer ;
+   -- signal TEST2:  integer ;
    -- signal TEST3:  integer ;
-    constant TbPeriod : time := 10 ns; -- ***EDIT*** Put right period here
+    constant TbPeriod : time := 10 ns; 
     signal TbClock : std_logic := '0';
     signal TbSimEnded : std_logic := '0';
 
@@ -54,19 +54,13 @@ begin
               --TEST3 => TEST3,
               pulse => pulse);
 
-    -- Clock generation
+   
     TbClock <= not TbClock after TbPeriod/2 when TbSimEnded /= '1' else '0';
-
-    -- ***EDIT*** Check that clk is really your main clock signal
     clk <= TbClock;
 
     stimuli : process
     begin
-        -- ***EDIT*** Adapt initialization as needed
         Btn <= '0';
-
-        -- Reset generation
-        -- ***EDIT*** Check that rst is really your reset signal
         rst <= '1';
         wait for 10 ns;
         rst <= '0';
@@ -77,17 +71,12 @@ begin
         wait for 3 * TbPeriod;
         Btn <= '1';
         wait for 200 * TbPeriod;
-        -- ***EDIT*** Add stimuli here
         wait for 100 * TbPeriod;
-
-        -- Stop the clock and hence terminate the simulation
         TbSimEnded <= '1';
         wait;
     end process;
 
 end tb;
-
--- Configuration block below is required by some simulators. Usually no need to edit.
 
 configuration cfg_tb_Speedup of tb_Speedup is
     for tb
