@@ -108,6 +108,6 @@ Inputs:
 * clk = input for clock signal
 
 Output:
-Edge_detected = output of pulses 
+* Edge_detected = output of pulses 
 
 ![Edge_detector sim](images/Speedup_waveform.png)
