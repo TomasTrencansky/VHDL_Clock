@@ -61,7 +61,10 @@ Componets:
 * UD_counter - simple use of counter to keep track of mode 
 * clock_enable - used for dection of long press
 
-![mode_sim](images/Mode_waveform.png)
+![mode_sim](images/Mode_waveform_V2.png)
+![mode_des](images/Mode_design_V1.png)
+
+
 
 
 ### [Speed up](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Speed%20up/Speedup.vhd)
