@@ -47,7 +47,7 @@ Output :
 * count - current number of counter
 
 
-![mode_sim](images/Mode_waveform.png)
+![mode_sim](images/Mode_waveform_V2.png)
 
 ### [Speed up](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Speed%20up/Speedup.vhd)
 Speeds up change when you hold
