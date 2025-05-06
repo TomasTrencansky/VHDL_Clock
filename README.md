@@ -77,8 +77,8 @@ Inputs
 * Btn = input signal
 * rst = resets speed to frist level
 
-Output
-* pulse
+Output 
+* pulse = output signal
 ![speedup_sim](images/Speedup_waveform.png)
 
 ### [Change](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Change/Change.vhd)
