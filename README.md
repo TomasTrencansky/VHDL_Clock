@@ -44,7 +44,7 @@ Inputs :
 * sub- if one then every rising edge of clk adds one
 
 Output :
-count - current number of counter
+* count - current number of counter
 
 
 ![mode_sim](images/Mode_waveform.png)
