@@ -138,3 +138,10 @@ Output:
 * Edge_detected = output of pulses 
 
 ![Edge_detector sim](images/Edge_detector_waveform_V2.png)
+
+
+
+## Clock modules
+
+### Clock/alarm
+![clock_sim](images/clock_simulation.png)
