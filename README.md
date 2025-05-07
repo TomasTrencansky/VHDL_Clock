@@ -21,29 +21,26 @@ We also built in the function where if you hold the button for a few the speed o
 ## Schematic
 ![schema](images/shematic_temp1.jpg)
 # Individual components
-We also used component [Clock enable](https://github.com/tomas-fryza/vhdl-labs/blob/master/solutions/lab5-counter/clock_en.vhd) which was covered in class and therefore won't be shown here
 
 ## [Input](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/input/Input.vhd)
-This component processes button inputs for clock and generates controlling signals for the rest of components for example clock, alarm, timer ... It consists of 5 components. Some of them are used multiple times. It has 6 inputs and 7 outputs. 
+This component processes button inputs for clock and generates controlling signals for the rest of components (for example clock, alarm, timer...)
+
+Input consists of 5 components. Some of them are used multiple times. It has 6 inputs and 7 outputs. 
+
 Components:
 * Edge_detector
 * Change
 * Mode
 * Speed up
-* clock enable
+* [Clock enable](https://github.com/tomas-fryza/vhdl-labs/blob/master/solutions/lab5-counter/clock_en.vhd)
 
 Inputs:
-* BNTU = up buttton input
-* BTND = down button input
+* BNTU = upper buttton input
+* BTND = lower button input
 * BTNL = left button input 
 * BTNR = right button input
 * BTNC = center button input
 * CLK100MHz = clock input
-
-![Input_sim](images/Input_waveform_V1.png)
-
-![Input_design](images/Input_design_V1.png)
-
 
 Outputs:
 * change_en_timer = signal which enables change time for timer
@@ -52,23 +49,28 @@ Outputs:
 * change_blink = is '1' when change of clock, alarm or clock are '1'
 * time_sub = signal for subtracting time
 * time_add = signal for adding time
-* mode_out = outputs current mode of clock 
+* mode_out = outputs current mode of clock
+
+![Input_sim](images/Input_waveform_V1.png)
+
+![Input_design](images/Input_design_V1.png)
+
 
 ### [UD counter](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/UD%20counter/UD_counter.vhd)
 UD counter is simple synchronous counter which has 5 inputs and one output. You can easily configure range of counting by setting generic value called NBITS. This range is allways 2^NBITS. 
 
 Inputs :
 * clk - input for clock signal 
-* en - if one enables counting 
-* add- if one then every rising edge of clk adds one
-* sub- if one then every rising edge of clk adds one
+* en - if value is set to 1, enables counting 
+* add- if value is set to 1, then every rising edge of clk adds one
+* sub- if value is set to 1, every rising edge of clk adds one
 
 Output :
-* count - current number of counter
+* count - current number on the counter
 ![UD counter_sim](images/UD_counter_waveform_V3.png)
 
 ### [Mode](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Mode/Mode.vhd)
-Mode is made of 2 different components which work together to switch betweeen modes of clock after long press of Left or Right buttons. It has 4 inputs and one output.  It is set up to count from 0 to 2, because clock has 3 modes. Duration of needed press is easily adjustable by generic value of Long_press_time ( 1s = 200 000 000 for clock 10 MHz)
+Mode is made of 2 different components which work together to switch betweeen modes of clock. It has 4 inputs and one output.  It is set up to count from 0 to 2, because clock has 3 modes. Duration of needed press is easily adjustable by generic value of Long_press_time ( 1s = 200 000 000 for clock 10 MHz)
 Modes:
 * Clock & Alarm "00"  (0)
 * Stopwatch "01"      (1)
@@ -94,7 +96,7 @@ Componets:
 
 
 ### [Speed up](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Speed%20up/Speedup.vhd)
-Speed up is simple component which with duration of btn input increases number of generated pulses. It has 4 speeds of pluse generation. 
+Speed up is simple component, which increases the number of generated pulses with thhe duration of button press. It has 4 speeds of pluse generation. 
 Duration and periods after which it genenrates pulses are easily configurable by generics. It has 3 inputs and sigle output for pulses. 
 
 Inputs
@@ -107,7 +109,7 @@ Output
 ![speedup_sim](images/Speedup_waveform.png)
 
 ### [Change](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Change/Change.vhd)
-Depending on inputs sets right outputs to '1' until they are rest to '0' by rst input. Only one of change outputs (0,1,2) can be '1' at one time.
+Depending on inputs, this component sets right outputs to '1' until they are reset to '0' by rst input. Only one of change outputs (0,1,2) can be '1' at one time.
 Component change has 5 inputs and 4 outputs. 
 
 Inputs
@@ -126,7 +128,7 @@ Outputs
 ![change sim](images/Change_waveform_V2.png)
 
 ### [Edge Detector](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Edge%20Detector/Edge_detector.vhd)
-Simple component which generates one pulse on rising edge of input signal. It has 2 inputs and 1 output
+Simple component which generates a pulse on rising edge of input signal. It has 2 inputs and 1 output
 
 Inputs:
 * Sig_in = input for signal 
