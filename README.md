@@ -140,6 +140,24 @@ Output:
 ![Edge_detector sim](images/Edge_detector_waveform_V2.png)
 
 
+## [Output]()
+
+### MX2
+
+
+### MX4
+
+
+### MX8
+
+
+### Blink
+
+
+### Flip Flop 
+
+
+### On For N
 
 ## Clock modules
 
