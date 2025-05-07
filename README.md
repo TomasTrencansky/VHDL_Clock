@@ -3,10 +3,10 @@
 ![poster](images/poster_temp1.jpg) 
 
 ## Team Members :
-1. Matej Nachtnebel (responsible for connecting the modules together)
+1. Matej Nachtnebel (responsible for connecting the modules together, inputs and output module)
 2. Tomáš Trenčanský (responsible for graphical output and organization)
-3. John Sergis (responsible for coding modules)
-4. Mesk Lashin (responsible for coding modules)
+3. John Sergis (responsible for coding modules (alarm,clock,timer,stopwatch))
+4. Mesk Lashin (responsible for coding modules (alarm,clock,timer,stopwatch))
 
 ## Descritpion
 Our team decided to build not just a clock, but **THE Clock**. We built your typical clock features into it, like a stopwatch, a timer, an alarm, and of course, a digital clock. Our Clock is not using any external peripherals, just the Nexys A7 50-T board and it's built in seven segment display and buttons. 
