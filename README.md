@@ -1,4 +1,4 @@
-# -THE CLOCK-
+![image](https://github.com/user-attachments/assets/cc2297a5-cec3-4419-bc80-da315a45b93a)# -THE CLOCK-
 
 ![posterone](images/poster.png) 
 
@@ -142,22 +142,28 @@ Output:
 
 ## [Output]()
 
-### MX2
+### [MX2](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/MX2/MX2.vhd)
+![MX2_sim](images/MX2__waveform.png)
+
+### [MX4](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/MX4/Mx4.vhd)
+![MX4_sim](images/MX4__waveform.png)
+
+### [MX8](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/MX8/MX8.vhd)
+![MX8_sim](images/MX8__waveform.png)
+
+### [Blink](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Blink/Blink.vhd)
+![Blink_sim](images/Blink_waveform.png)
+![Blink_des](images/Blink_design.png)
 
 
-### MX4
+### [Flip Flop](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Flip%20Flop/Flip_Flop.vhd) 
+![Flip_Flop_sim](images/Flip_Flop_waveform.png)
 
 
-### MX8
+### [AN shifter](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/AN%20Shifter/An_shifter.vhd)
+![AN_shifter_sim](images/An_shifter_waveform_V1.png)
 
-
-### Blink
-
-
-### Flip Flop 
-
-
-### On For N
+### [On For N]()
 
 ## Clock modules
 
