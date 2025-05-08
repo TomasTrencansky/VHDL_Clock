@@ -51,8 +51,10 @@ Outputs:
 * time_add = signal for adding time
 * mode_out = outputs current mode of clock
 
+Simulation
 ![Input_sim](images/Input_waveform_V1.png)
 
+Schematic 
 ![Input_design](images/Input_design_V1.png)
 
 
@@ -67,6 +69,8 @@ Inputs :
 
 Output :
 * count - current number on the counter
+
+Simulation
 ![UD counter_sim](images/UD_counter_waveform_V3.png)
 
 ### [Mode](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Mode/Mode.vhd)
@@ -88,11 +92,11 @@ Componets:
 * UD_counter - simple use of counter to keep track of mode 
 * clock_enable - used for dection of long press
 
+Simulation
 ![mode_sim](images/Mode_waveform_V2.png)
 
+Schematic
 ![mode_des](images/Mode_design_V1.png)
-
-
 
 
 ### [Speed up](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Speed%20up/Speedup.vhd)
@@ -106,6 +110,8 @@ Inputs
 
 Output 
 * pulse = output signal
+
+Simulation
 ![speedup_sim](images/Speedup_waveform.png)
 
 ### [Change](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Change/Change.vhd)
@@ -124,7 +130,8 @@ Outputs
 * change_1 = changes to '1' if mode is '00' and Input_pulse_2 is '1' 
 * change_2 = changes to '1' if mode is '10' and Input_pulse_1 is '1' 
 * change_active = when one of changes (1,2,3) is '1' change_active is also '1'
-  
+
+Simulation  
 ![change sim](images/Change_waveform_V2.png)
 
 ### [Edge Detector](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Edge%20Detector/Edge_detector.vhd)
@@ -135,36 +142,131 @@ Inputs:
 * clk = input for clock signal
 
 Output:
-* Edge_detected = output of pulses 
+* Edge_detected = output of pulses
 
+Simulation
 ![Edge_detector sim](images/Edge_detector_waveform_V2.png)
 
 
 ## [Output]()
+to be added 
 
 ### [MX2](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/MX2/MX2.vhd)
+Synchronous multiplexor for 2 data inputs and one data output. Depending on set input switches which input is on output. Value can switch only when en is high. Nunber of bits in input is easily set by generic value N_bits.
+
+Inputs:
+* clk = input for clock signal 
+* en  = signal which enables change of value 
+* set = input for setting which input is output (1bit)
+* IN0 = input data
+* IN1 = input data 
+
+Output
+* Mx_out = output data 
+
+
+Simulation
 ![MX2_sim](images/MX2__waveform.png)
 
 ### [MX4](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/MX4/Mx4.vhd)
+Synchronous multiplexor for 4 data inputs and one data output. Depending on set input switches which input is on output. Value can switch only when en is high. Nunber of bits in input is easily set by generic value N_bits.
+
+Inputs:
+* clk = input for clock signal 
+* en  = signal which enables change of value 
+* set = input for setting which input is output (2bit)
+* IN0 = input data
+* IN1 = input data 
+* IN2 = input data
+* IN3 = input data
+  
+Output
+* Mx_out = output data
+
+  
+Simulation
 ![MX4_sim](images/MX4__waveform.png)
 
 ### [MX8](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/MX8/MX8.vhd)
+Synchronous multiplexor for 8 data inputs and one data output. Depending on set input switches which input is on output. Value can switch only when en is high. Nunber of bits in input is easily set by generic value N_bits.
+
+Inputs:
+* clk = input for clock signal 
+* en  = signal which enables change of value 
+* set = input for setting which input is output (3bit)
+* IN0 = input data
+* IN1 = input data 
+* IN2 = input data
+* IN3 = input data
+* IN4 = input data
+* IN5 = input data 
+* IN6 = input data
+* IN7 = input data
+  
+Output
+* Mx_out = output data
+
+
+Simulation
 ![MX8_sim](images/MX8__waveform.png)
 
 ### [Blink](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Blink/Blink.vhd)
+Simple component which after N number of clock signal negates value of output. Output is constanly high if en is low. If en is high it switches output between 1 or 0. It is made from 2 components. 
+
+Components:
+* Flip Flop
+* Clock enable
+
+Inputs:
+* clk = input for clock signal 
+* en = enables blinking if high
+
+Output:
+blink_out = output signal 
+      
+Simulation
 ![Blink_sim](images/Blink_waveform.png)
+
+Schematic
 ![Blink_des](images/Blink_design.png)
 
 
 ### [Flip Flop](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Flip%20Flop/Flip_Flop.vhd) 
+Flip flop  flips state of output on rising edge of clock if en is high. If rst is high output returns to default value Q_out 0 and Q_out_neg 1.
+
+Inputs:
+* clk = input for clock singal 
+* rst = reset input 
+* en  = enables switching
+
+Outputs:
+* Q_out = normal output
+* Q_out_neg = negated output
+
+Simulation
 ![Flip_Flop_sim](images/Flip_Flop_waveform.png)
 
-
 ### [AN shifter](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/AN%20Shifter/An_shifter.vhd)
+AN shifter moves position of 0 to left when en is high every rising edge. AN is 8bits long with only one 0. 0 is active seven segement display. We are using 8 segments so we have to cycle through all of them. 
+
+
+Inputs:
+* clk = input for clock signal 
+* en  = enables switching 
+* rst = resets output value to default  (AN = "11111110" , Digit = "000")
+  
+Outputs:
+* AN = outputs current AN (8bit)
+* Digit = order of current displaying digit (3bit)
+
+
+Simulation
 ![AN_shifter_sim](images/An_shifter_waveform_V1.png)
 
 ### [On For N]()
+ to be added 
 
+ 
 ## Clock modules
 
 ### Clock/alarm
