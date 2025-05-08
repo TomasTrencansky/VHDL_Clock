@@ -3,7 +3,7 @@
 ![posterone](images/poster.png) 
 
 ## Team Members :
-1. Matej Nachtnebel (responsible for connecting the modules together, inputs and output module)
+1. Matej Nachtnebel (responsible for connecting the modules together, inputs and output module,temp schematic)
 2. Tomáš Trenčanský (responsible for graphical output and organization)
 3. John Sergis (responsible for coding modules (alarm,clock,timer,stopwatch))
 4. Mesk Lashin (responsible for coding modules (alarm,clock,timer,stopwatch))
@@ -19,7 +19,7 @@ But what do each of the buttons do? It's quite simple :
 We also built in the function where if you hold the button for a few the speed of change increases.
 
 ## Schematic
-![schema](images/shematic_temp1.jpg)
+![schema](images/Top_level_temp.jpg)
 # Individual components
 
 ## [Input](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/input/Input.vhd)
