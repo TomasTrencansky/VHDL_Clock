@@ -222,7 +222,7 @@ Inputs:
 * en = enables blinking if high
 
 Output:
-blink_out = output signal 
+* blink_out = output signal 
       
 Simulation
 ![Blink_sim](images/Blink_waveform.png)
