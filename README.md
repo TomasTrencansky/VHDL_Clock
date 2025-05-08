@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/cc2297a5-cec3-4419-bc80-da315a45b93a)# -THE CLOCK-
+![image](https://github.com/user-attachments/assets/cc2297a5-cec3-4419-bc80-da315a45b93a)
+# -THE CLOCK-
 
 ![posterone](images/poster.png) 
 
