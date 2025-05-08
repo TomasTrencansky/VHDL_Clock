@@ -34,6 +34,14 @@ Components:
 * Speed up
 * [Clock enable](https://github.com/tomas-fryza/vhdl-labs/blob/master/solutions/lab5-counter/clock_en.vhd)
 
+Generics:
+* Long press time = number of periods of clk, until long press is registered 
+* NT_speed_up = number of periods of clk, until speed of generation of pulses increases 
+* DF_speed = starting speed of generation
+* S2_speed = 2nd speed of generation
+* S3_speed = 3rd speed of generation
+* S4_speed = 4th speed of generation
+
 Inputs:
 * BNTU = upper buttton input
 * BTND = lower button input
@@ -61,6 +69,9 @@ Schematic
 ### [UD counter](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/UD%20counter/UD_counter.vhd)
 UD counter is simple synchronous counter which has 5 inputs and one output. You can easily configure range of counting by setting generic value called NBITS. This range is allways 2^NBITS. 
 
+Generic:
+* NBITS = number of counter bits 
+
 Inputs :
 * clk - input for clock signal 
 * en - if value is set to 1, enables counting 
@@ -79,6 +90,9 @@ Modes:
 * Clock & Alarm "00"  (0)
 * Stopwatch "01"      (1)
 * Timer "10"          (2)
+
+Generic:
+* Long press time = number of periods of clk, until long press is registered 
 
 Inputs
 * clk = input for clock signal
@@ -102,6 +116,14 @@ Schematic
 ### [Speed up](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Speed%20up/Speedup.vhd)
 Speed up is simple component, which increases the number of generated pulses with thhe duration of button press. It has 4 speeds of pluse generation. 
 Duration and periods after which it genenrates pulses are easily configurable by generics. It has 3 inputs and sigle output for pulses. 
+
+Generics:
+* NT_speed_up = number of periods of clk, until speed of generation of pulses increases 
+* DF_speed = starting speed of generation
+* S2_speed = 2nd speed of generation
+* S3_speed = 3rd speed of generation
+* S4_speed = 4th speed of generation
+
 
 Inputs
 * clk = input for clock signal
@@ -148,11 +170,65 @@ Simulation
 ![Edge_detector sim](images/Edge_detector_waveform_V2.png)
 
 
-## [Output]()
-to be added 
+## [Output](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Output/Output.vhd)
+This component processes outputs form clock, alarm, timer, stopwatch. Automatically switches bettween 7 segment displays
+and outputing right part of input signal. Depending on current state of inputs. It has basic PWM modulation for display and waking lights.
+
+Generics:
+* Period = sets period for pwm
+* N_blink_periods = number of clk periods for between blinking
+* N_Slow_wake_up = number periods of clk till increasing duty by 1
+
+Components:
+* Mx2
+* Mx4
+* Mx8
+* bin2seg
+* clock_enable
+* An_shifter
+* Blink
+* On For N
+
+Inputs:
+* CLK100MHZ = input for clock signal 
+* timer_runout = high if timer finishes 
+* alarm_active = high if alarm is "ringig"
+* change_alarm = high if you are able to change value of alarm
+* change_active = high if one from clock, alarm, timer is in change mode 
+* SW (5bits) = input for brightness of display 
+* time_clock (32bits) = input of time from clock
+* time_alarm (32bits) = input of time from alarm
+* time_timer (32bits) = input of time from timer
+* time_stopwatch (32bits) = input of time from stopwatch
+* current_mode (2bit) = input for current mode of clock
+
+Outputs:
+* RGB_led
+* CA = output for 7segment displat
+* CB = output for 7segment displat
+* CC = output for 7segment displat
+* CD = output for 7segment displat
+* CE = output for 7segment displat
+* CF = output for 7segment displat
+* CG = output for 7segment displat
+* DP = output for 7segment displat
+* AN (8bit) = sets active 7segment display
+* Led (16bit) = output for green leds
+
+Simulation
+
+![Output_sim](images/Output_waveform.png)
+
+Schematic
+
+![Output_des](images/Output_des.png)
+
 
 ### [MX2](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/MX2/MX2.vhd)
 Synchronous multiplexor for 2 data inputs and one data output. Depending on set input switches which input is on output. Value can switch only when en is high. Nunber of bits in input is easily set by generic value N_bits.
+
+Generic:
+* N_bits = number of input bits 
 
 Inputs:
 * clk = input for clock signal 
@@ -170,6 +246,9 @@ Simulation
 
 ### [MX4](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/MX4/Mx4.vhd)
 Synchronous multiplexor for 4 data inputs and one data output. Depending on set input switches which input is on output. Value can switch only when en is high. Nunber of bits in input is easily set by generic value N_bits.
+
+Generic:
+* N_bits = number of input bits
 
 Inputs:
 * clk = input for clock signal 
@@ -189,6 +268,9 @@ Simulation
 
 ### [MX8](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/MX8/MX8.vhd)
 Synchronous multiplexor for 8 data inputs and one data output. Depending on set input switches which input is on output. Value can switch only when en is high. Nunber of bits in input is easily set by generic value N_bits.
+
+Generic:
+* N_bits = number of input bits
 
 Inputs:
 * clk = input for clock signal 
@@ -216,6 +298,9 @@ Simple component which after N number of clock signal negates value of output. O
 Components:
 * Flip Flop
 * Clock enable
+
+Generic:
+* Blink_N_periods = number of clk periods for between blinking
 
 Inputs:
 * clk = input for clock signal 
@@ -263,9 +348,34 @@ Outputs:
 Simulation
 ![AN_shifter_sim](images/An_shifter_waveform_V1.png)
 
-### [On For N]()
- to be added 
+### [On For N](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/On%20For%20N/On_For_N.vhd)
+Part of crude Pwm modulator in output. After recieving pulse on start_c output is held high until N periods of clk pass. It has 2 genrics which set number of clk periods per one period of "pwm" (N_Period) and number periods of clk till increasing duty by 1 (N_Slow_wake_up). This pwm has 25 states so 1 step is 4% duty.
 
+It has two modes:
+* mode = 0 = then N is set by 5bit period input
+* mode = 1 = then N is after certain number of periods rises duty by 1. Slowly to max
+
+Generics:
+* N_Period = number of clk periods per one period of pwm
+* N_Slow_wake_up = number periods of clk till increasing duty by 1
+  
+ Inputs:
+* clk = input for clock signal 
+* rst = resets output to 0
+* start_c = input for start pulse 
+* mode = sets mode 
+* period (5 bits)
+
+Outputs:
+* duty_sig = output signal 
+
+Simulation
+
+Mode 0
+![On For N_1](images/On_For_N_waveform_m1_V1.png)
+
+Mode 1
+![On For N_2](images/On_For_N_waveform_m2_V1.png)
  
 ## Clock modules
 
