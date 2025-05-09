@@ -20,6 +20,28 @@ We also built in the function where if you hold the button for a few the speed o
 
 ## [Top Level](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Top%20Level/Top_Level.vhd)
 
+Inputs:
+* BNTU = upper buttton input
+* BTND = lower button input
+* BTNL = left button input 
+* BTNR = right button input
+* BTNC = center button input
+* CLK100MHz = clock input
+
+Outputs:
+* RGB_led
+* CA = output for 7-segment display
+* CB = output for 7-segment display
+* CC = output for 7-segment display
+* CD = output for 7-segment display
+* CE = output for 7-segment display
+* CF = output for 7-segment display
+* CG = output for 7-segment display
+* DP = output for 7-segment display
+* AN (8bit) = sets active 7-segment display
+* Led (16bit) = output for green LEDs
+
+
 ### Schematic
 ![schema](images/schematic_final.png)
 # Individual components
