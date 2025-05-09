@@ -18,7 +18,9 @@ But what do each of the buttons do? It's quite simple :
 
 We also built in the function where if you hold the button for a few the speed of change increases.
 
-## Schematic
+## [Top Level](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Top%20Level/Top_Level.vhd)
+
+### Schematic
 ![schema](images/schematic_final.png)
 # Individual components
 
