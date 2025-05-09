@@ -462,9 +462,8 @@ Outputs:
 
 ![stopwatch_des](images/Stopwatch_des_V2.png)
 
-
 ### [Timer]()
-This compoment is what makes timer tick
+This compoment is what makes timer tick.
 
 Components:
 * Set Time Value
@@ -500,5 +499,5 @@ Inputs:
 
 Outputs:
 * time_out - 32-bit, each number of the clock is carried in 4-bits
-* 
+
 ![Countdown_scheme](images/Countdown_des.png)
