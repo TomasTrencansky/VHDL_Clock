@@ -19,7 +19,7 @@ But what do each of the buttons do? It's quite simple :
 We also built in the function where if you hold the button for a few the speed of change increases.
 
 ## Schematic temp
-![schema](images/Top_level_temp.png)
+![schema](images/TopLevel_V2.png)
 # Individual components
 
 ## [Input](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/input/Input.vhd)
@@ -222,7 +222,7 @@ Simulation
 
 Schematic
 
-![Output_des](images/Output_des.png)
+![Output_des](images/Output_des_V2.png)
 
 
 ### [MX2](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/MX2/MX2.vhd)
