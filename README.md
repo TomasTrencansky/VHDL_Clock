@@ -77,6 +77,7 @@ Inputs :
 * en - if value is set to 1, enables counting 
 * add- if value is set to 1, then every rising edge of clk adds one
 * sub- if value is set to 1, every rising edge of clk adds one
+* rst - resets counter
 
 Output :
 * count - current number on the counter
@@ -398,7 +399,24 @@ Output
 ![DX2_sim](images/DX2_waveform.png)
 
 ### [UD counter signaling](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/UD_counter_signaling/UD_counter_signaling.vhd)
+UD counter is simple synchronous counter which has 5 inputs and one output. You can easily configure range of counting by setting generic value called NBITS. This range is allways 2^NBITS. 
 
+Generic:
+* NBITS = number of counter bits
+* Count_range = 
 
+Inputs :
+* clk - input for clock signal 
+* en - if value is set to 1, enables counting 
+* add - if value is set to 1, then every rising edge of clk adds one
+* sub - if value is set to 1, every rising edge of clk adds one
+* rst- resets counter
+
+Output :
+* count - current number on the counter
+* sub_out -
+* add-out -
 
 ![ud_counter_signaling_sim](images/UD_counter_signaling_waveform.png)
+
+### [Clock]
