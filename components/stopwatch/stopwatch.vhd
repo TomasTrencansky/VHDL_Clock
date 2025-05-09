@@ -60,18 +60,10 @@ signal sig_add_ums:std_logic;
 signal sig_add_tms:std_logic;
 signal sig_add_us:std_logic;
 signal sig_add_ts:std_logic;
-signal selected_add:std_logic_vector(0 downto 0);
-signal selected_sub:std_logic_vector(0 downto 0);
 signal sig_add_ts_mx:std_logic_vector(0 downto 0);
-signal sig_add_in:std_logic_vector(0 downto 0);
-signal sig_sub_in:std_logic_vector(0 downto 0);
 signal sig_add_um:std_logic;
-signal sig_sub_um: std_logic;
 signal sig_add_tm:std_logic;
-signal sig_sub_tm: std_logic;   
-signal sig_add_tm_24: std_logic; 
 signal sig_add_uh_24: std_logic; 
-signal time_24: std_logic_vector(7 downto 0);
 
 begin
 
