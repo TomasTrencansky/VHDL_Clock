@@ -430,7 +430,7 @@ Components:
 * DX2
 
 Inputs:
-* clk1ms -
+* clk1ms - same as clk, but with different period
 * change -
 * add - if value is set to 1, then every rising edge of clk adds one
 * sub - if value is set to 1, every rising edge of clk adds one
@@ -442,3 +442,22 @@ Outputs:
 
 Schematic
 ![clock_sch](images/clock_design.png)
+
+### [Stopwatch](https://github.com/TomasTrencansky/VHDL_Clock/tree/main/components/stopwatch)
+This component is what makes the stopwatch mode tick.
+
+Components:
+* UD counter signaling
+* MX2
+* Flip_Flop
+
+Inputs:
+* btn - button input, activates stopwatch
+* long_btn - long press button input, resets stopwatch
+* clk - input for clock signal 
+* clk1ms - same as clk, but with different period
+
+Outputs:
+* time_out - 
+
+![stopwatch_des](images/stopwatch_design.png)
