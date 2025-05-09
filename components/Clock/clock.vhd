@@ -22,6 +22,7 @@ Generic (
                 Count_range: integer:=40
              );
 Port ( 
+           Reset_value: std_logic_vector(NBITS-1 downto 0);
            en : in std_logic ;
            add : in STD_LOGIC;
            sub : in STD_LOGIC;
@@ -90,6 +91,7 @@ Generic map(
                 Count_range =>9
              )
 Port map( 
+           Reset_value => "0000",
            en  => neg_change,
            add => clk1ms,
            sub => '0',
@@ -106,6 +108,7 @@ Generic map(
                 Count_range =>9
              )
 Port map( 
+           Reset_value => "0000",
            en  => neg_change,
            add => sig_add_ums,
            sub => '0',
@@ -122,6 +125,7 @@ Generic map(
                 Count_range =>9
              )
 Port map( 
+           Reset_value => "0000",
            en  => neg_change,
            add => sig_add_tms,
            sub => '0',
@@ -138,6 +142,7 @@ Generic map(
                 Count_range =>6
              )
 Port map( 
+           Reset_value => "0000",
            en  => neg_change,
            add => sig_add_us,
            sub => '0',
@@ -178,6 +183,7 @@ Generic map(
                 Count_range =>9
              )
 Port map( 
+           Reset_value => "0000",
            en  => '1',
            add => selected_add(0),
            sub => selected_sub(0),
@@ -194,6 +200,7 @@ Generic map(
                 Count_range =>5
              )
 Port map( 
+           Reset_value => "0000",
            en  => '1',
            add => sig_add_um,
            sub => sig_sub_um,
@@ -228,6 +235,7 @@ Generic map(
                 Count_range =>4
              )
 Port map( 
+           Reset_value => "0000",
            en  => '1',
            add => sig_add_sub_tm_24(1),
            sub => sig_add_sub_tm_24(0),
@@ -244,6 +252,7 @@ Generic map(
                 Count_range =>2
              )
 Port map( 
+           Reset_value => "0000",
            en  => '1',
            add => sig_add_sub_uh_24(1),
            sub => sig_add_sub_uh_24(0),
@@ -261,6 +270,7 @@ Generic map(
                 Count_range =>2
              )
 Port map( 
+           Reset_value => "0000",
            en  => '1',
            add => sig_add_sub_tm_12(1),
            sub => sig_add_sub_tm_12(0),
@@ -278,6 +288,7 @@ Generic map(
                 Count_range =>1
              )
 Port map( 
+           Reset_value => "0000",
            en  => '1',
            add => sig_add_sub_uh_12(1),
            sub => sig_add_sub_uh_12(0),
