@@ -272,7 +272,9 @@ sig_wake_res <= not(alarm_active);
 display_active <= sig_display_change_blink and pwm_active;
 neg_display_active <= not(display_active);
 sig_blink <= timer_runout or alarm_active;
-Led <= (others =>sig_leds);
+Led(15 downto 3) <= (others =>sig_leds);
+Led(2) <= '0';
+Led(1 downto 0) <= current_mode;
 DP <='1';
 
 --test_cur_time <= current_time_disp;
