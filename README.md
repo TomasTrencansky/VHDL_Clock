@@ -380,6 +380,19 @@ Mode 1
 ## Clock modules
 
 ### [DX2](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/DX2/DX2.vhd)
+Synchronous demultiplexor for 1 data inputs and 2 data outputs. Depending on set input switches which output carries the input signalt. Value can switch only when en is high. Nunber of bits in input is easily set by generic value N_bits.
 
+Generic:
+* N_bits = number of input bits
+
+Inputs:
+* clk = input for clock signal 
+* en  = signal which enables change of value 
+* set = input for setting which input is output (2bit)
+* IN0 = input data
+  
+Output
+* dx_out0 = output data
+* dx_out1 = output data
 
 ![DX2_sim](images/DX2_waveform.png)
