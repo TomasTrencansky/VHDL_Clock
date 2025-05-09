@@ -515,7 +515,7 @@ Outputs:
 
 ![Countdown_scheme](images/Countdown_des.png)
 
-### [Alarm]()
+### [Alarm](https://github.com/TomasTrencansky/VHDL_Clock/tree/main/components/Alarm)
 This componets is what makes the Alarm tick.
 
 Components:
