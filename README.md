@@ -18,7 +18,7 @@ But what do each of the buttons do? It's quite simple :
 
 We also built in the function where if you hold the button for a few the speed of change increases.
 
-## Schematic temp
+## Schematic
 ![schema](images/TopLevel_V2.png)
 # Individual components
 
