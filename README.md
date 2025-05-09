@@ -404,7 +404,7 @@ UD counter is simple synchronous counter which has 5 inputs and one output. You 
 
 Generic:
 * NBITS = number of counter bits
-* Count_range = 
+* Count_range = range of counting
 
 Inputs :
 * clk - input for clock signal 
@@ -415,8 +415,8 @@ Inputs :
 
 Output :
 * count - current number on the counter
-* sub_out -
-* add-out -
+* sub_out - lower overflow
+* add-out - upper overflow
 
 Simulation
 ![ud_counter_signaling_sim](images/UD_counter_signaling_waveform_V2.png)
@@ -431,10 +431,10 @@ Components:
 
 Inputs:
 * clk1ms - same as clk, but with different period
-* change -
+* change - allows changing of time
 * add - if value is set to 1, then every rising edge of clk adds one
 * sub - if value is set to 1, every rising edge of clk adds one
-* sw -
+* sw - changes clock format
 * clk - input for clock signal 
 
 Outputs:
@@ -458,6 +458,6 @@ Inputs:
 * clk1ms - same as clk, but with different period
 
 Outputs:
-* time_out - 
+* time_out - 32-bit, each number of the clock is carried in 4-bits
 
 ![stopwatch_des](images/Stopwatch_des_V2.png)
