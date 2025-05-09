@@ -378,3 +378,8 @@ Mode 1
 ![On For N_2](images/On_For_N_waveform_m2_V1.png)
  
 ## Clock modules
+
+### [DX2](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/DX2/DX2.vhd)
+
+
+![DX2_sim](images/DX2_waveform.png)
