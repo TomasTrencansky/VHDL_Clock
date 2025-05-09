@@ -396,3 +396,9 @@ Output
 * dx_out1 = output data
 
 ![DX2_sim](images/DX2_waveform.png)
+
+### [UD counter signaling](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/UD_counter_signaling/UD_counter_signaling.vhd)
+
+
+
+![ud_counter_signaling_sim](images/UD_counter_signaling_waveform.png)
