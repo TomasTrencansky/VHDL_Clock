@@ -460,4 +460,4 @@ Inputs:
 Outputs:
 * time_out - 
 
-![stopwatch_des](images/stopwatch_desing_V2.png)
+![stopwatch_des](images/stopwatch_des_V2.png)
