@@ -462,7 +462,7 @@ Outputs:
 
 ![stopwatch_des](images/Stopwatch_des_V2.png)
 
-### [Timer]()
+### [Timer](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/TImer/Timer.vhd)
 This compoment is what makes timer tick.
 
 Components:
