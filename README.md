@@ -461,3 +461,25 @@ Outputs:
 * time_out - 32-bit, each number of the clock is carried in 4-bits
 
 ![stopwatch_des](images/Stopwatch_des_V2.png)
+
+
+### [TImer]()
+This compoment is what makes timer tick
+
+Components:
+* UD counter signaling
+* MX2
+* Flip_Flop
+
+Inputs:
+* button - button input, activates stopwatch
+* add - adds time on the timer
+* sub - lowers the time on the timer
+* change - allows you to set the time
+* clk - input for clock signal 
+* clk1ms - same as clk, but with different period
+
+Outputs:
+* time_out - 32-bit, each number of the clock is carried in 4-bits
+
+![Timer_sch](image/Timer_design.png)
