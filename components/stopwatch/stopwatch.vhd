@@ -20,10 +20,11 @@ Generic (
                 Count_range: integer:=40
              );
 Port ( 
+           Reset_value: std_logic_vector(NBITS-1 downto 0);
            en : in std_logic ;
            add : in STD_LOGIC;
            sub : in STD_LOGIC;
-           clk : in std_logic;
+           clk : in std_logic; 
            rst: in std_logic;
            add_out: out std_logic;
            sub_out: out std_logic;
@@ -109,6 +110,7 @@ Generic map(
                 Count_range =>9
              )
 Port map( 
+           Reset_value => "0000",
            en  => '1',
            add => sig_clk1ms(0),
            sub => '0',
@@ -125,6 +127,7 @@ Generic map(
                 Count_range =>9
              )
 Port map( 
+           Reset_value => "0000",
            en  => '1',
            add => sig_add_ums,
            sub => '0',
@@ -141,6 +144,7 @@ Generic map(
                 Count_range =>9
              )
 Port map( 
+           Reset_value => "0000",
            en  => '1',
            add => sig_add_tms,
            sub => '0',
@@ -157,6 +161,7 @@ Generic map(
                 Count_range =>6
              )
 Port map( 
+           Reset_value => "0000",
            en  => '1',
            add => sig_add_us,
            sub => '0',
@@ -175,6 +180,7 @@ Generic map(
                 Count_range =>9
              )
 Port map( 
+           Reset_value => "0000",
            en  => '1',
            add => sig_add_us,
            sub => '0',
@@ -191,6 +197,7 @@ Generic map(
                 Count_range =>5
              )
 Port map( 
+           Reset_value => "0000", 
            en  => '1',
            add => sig_add_um,
            sub => '0',
@@ -207,6 +214,7 @@ Generic map(
                 Count_range =>4
              )
 Port map( 
+           Reset_value => "0000",
            en  => '1',
            add => sig_add_tm,
            sub => '0',
@@ -223,6 +231,7 @@ Generic map(
                 Count_range =>2
              )
 Port map( 
+           Reset_value => "0000",
            en  => '1',
            add => sig_add_uh_24,
            sub => '0',
