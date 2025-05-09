@@ -499,7 +499,7 @@ Outputs:
 ![STV_scheme](images/Set_time_value_des.png)
 
 ### [Countdown](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Countdown/Countdown.vhd)
-Part of TImer that counts the time down.
+Part of Timer that counts the time down.
 
 Inputs:
 * clk - input for clock signal
@@ -514,3 +514,24 @@ Outputs:
 * time_run_out - sends a signal when time runs out
 
 ![Countdown_scheme](images/Countdown_des.png)
+
+### [Alarm]()
+This componets is what makes the Alarm tick.
+
+Components:
+* Set Time Value
+
+Inputs:
+* clk - input for clock signal
+* add - adds time on the timer
+* sub - decreases time on the timer
+* change - allows you to change time
+* sw - turns alarm on
+* btn
+* time_in
+
+Outputs:
+* alarm_time - tells to when is the alarms set
+* alarm_active - tells if the alarm is active
+
+![Alarm_sch](images/alarm_des.png)
