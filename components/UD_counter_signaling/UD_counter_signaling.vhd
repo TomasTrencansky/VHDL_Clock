@@ -11,6 +11,7 @@ entity UD_counter_signaling is
              );
     Port ( 
            --test: out integer range Count_range downto 0 :=0;
+           Reset_value: std_logic_vector(NBITS-1 downto 0);
            en : in std_logic ;
            add : in STD_LOGIC;
            sub : in STD_LOGIC;
@@ -35,7 +36,7 @@ process (clk)
     begin
     if rising_edge(clk) then 
         if rst = '1' then
-            sig_cnt <= 0;
+            sig_cnt <= TO_INTEGER(unsigned(Reset_value));
         elsif ((add='1') and (en = '1') and (sub='0')) then
             sig_cnt <= sig_cnt + 1;
         elsif  ((sub='1' )and (en = '1') and (add='0'))  then
