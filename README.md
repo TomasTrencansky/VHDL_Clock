@@ -222,7 +222,7 @@ Simulation
 
 Schematic
 
-![Output_des](images/Output_des_V2.png)
+![Output_des](images/output_des_V2.png)
 
 
 ### [MX2](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/MX2/MX2.vhd)
