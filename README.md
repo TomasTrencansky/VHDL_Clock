@@ -1,4 +1,4 @@
-# -THE CLOCK-
+# THE CLOCK
 
 ![posterone](images/poster.png) 
 
@@ -171,7 +171,7 @@ Simulation
 
 
 ## [Output](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Output/Output.vhd)
-This component processes outputs form clock, alarm, timer, stopwatch. Automatically switches bettween 7 segment displays
+This component processes outputs from clock, alarm, timer, stopwatch. Automatically switches bettween 7 segment displays
 and outputing right part of input signal. Depending on current state of inputs. It has basic PWM modulation for display and waking lights.
 
 Generics:
@@ -204,16 +204,16 @@ Inputs:
 
 Outputs:
 * RGB_led
-* CA = output for 7segment displat
-* CB = output for 7segment displat
-* CC = output for 7segment displat
-* CD = output for 7segment displat
-* CE = output for 7segment displat
-* CF = output for 7segment displat
-* CG = output for 7segment displat
-* DP = output for 7segment displat
-* AN (8bit) = sets active 7segment display
-* Led (16bit) = output for green leds
+* CA = output for 7-segment display
+* CB = output for 7-segment display
+* CC = output for 7-segment display
+* CD = output for 7-segment display
+* CE = output for 7-segment display
+* CF = output for 7-segment display
+* CG = output for 7-segment display
+* DP = output for 7-segment display
+* AN (8bit) = sets active 7-segment display
+* Led (16bit) = output for green LEDs
 
 Simulation
 
@@ -317,7 +317,7 @@ Schematic
 
 
 ### [Flip Flop](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Flip%20Flop/Flip_Flop.vhd) 
-Flip flop  flips state of output on rising edge of clock if en is high. If rst is high output returns to default value Q_out 0 and Q_out_neg 1.
+Flip flop flips state of output on rising edge of clock if en is high. If rst is high output returns to default value Q_out 0 and Q_out_neg 1.
 
 Inputs:
 * clk = input for clock singal 
@@ -349,7 +349,7 @@ Simulation
 ![AN_shifter_sim](images/An_shifter_waveform_V1.png)
 
 ### [On For N](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/On%20For%20N/On_For_N.vhd)
-Part of crude Pwm modulator in output. After recieving pulse on start_c output is held high until N periods of clk pass. It has 2 genrics which set number of clk periods per one period of "pwm" (N_Period) and number periods of clk till increasing duty by 1 (N_Slow_wake_up). This pwm has 25 states so 1 step is 4% duty.
+Part of crude Pwm modulator in output. After recieving pulse on start_c output is held high until N periods of clk pass. It has 2 genrics which set number of clk periods per one period of "pwm" (N_Period) and number periods of clk untill increasing duty by 1 (N_Slow_wake_up). This pwm has 25 states so 1 step is 4% duty.
 
 It has two modes:
 * mode = 0 = then N is set by 5bit period input
@@ -378,6 +378,3 @@ Mode 1
 ![On For N_2](images/On_For_N_waveform_m2_V1.png)
  
 ## Clock modules
-
-### Clock/alarm
-![clock_sim](images/clock_simulation.png)
