@@ -483,6 +483,7 @@ Outputs:
 ![Timer_sch](images/Timer_des.png)
 
 ### [Set Time Value]()
+Allows you to set time on timer
 
 Inputs:
 * button - button input, activates stopwatch
@@ -492,7 +493,8 @@ Outputs:
 
 ![STV_scheme](images/Set_time_value_des.png)
 
-### [Countdown]()
+### [Countdown](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Countdown/Countdown.vhd)
+Part of TImer that counts the time down.
 
 Inputs:
 * button - button input, activates stopwatch
