@@ -480,7 +480,7 @@ Inputs:
 Outputs:
 * time_out - 32-bit, each number of the clock is carried in 4-bits
 
-![Timer_sch](image/Timer_design.png)
+![Timer_sch](image/Timer_des.png)
 
 ### [Set Time Value]()
 
