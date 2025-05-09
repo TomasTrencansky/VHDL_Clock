@@ -471,6 +471,7 @@ Components:
 
 Inputs:
 * button - button input, activates stopwatch
+* long_button - long press button input, resets timer
 * add - adds time on the timer
 * sub - lowers the time on the timer
 * change - allows you to set the time
@@ -479,6 +480,7 @@ Inputs:
 
 Outputs:
 * time_out - 32-bit, each number of the clock is carried in 4-bits
+* Timer_runout - output is 1 when the timer runs out
 
 ![Timer_sch](images/Timer_des.png)
 
@@ -486,7 +488,10 @@ Outputs:
 Allows you to set time on timer
 
 Inputs:
-* button - button input, activates stopwatch
+* add - adds time on the timer
+* sub - lowers the time on the timer
+* change - allows you to set the time
+* clk - input for clock signal 
 
 Outputs:
 * time_out - 32-bit, each number of the clock is carried in 4-bits
@@ -497,9 +502,15 @@ Outputs:
 Part of TImer that counts the time down.
 
 Inputs:
-* button - button input, activates stopwatch
+* clk - input for clock signal
+* clk1ms - same as clk, but with different period
+* btn - button input, activates stopwatch
+* change - allows you to set the time
+* set_time_in - signal which carries how much time was set
+* long_btn - resets countdown
 
 Outputs:
 * time_out - 32-bit, each number of the clock is carried in 4-bits
+* time_run_out - sends a signal when time runs out
 
 ![Countdown_scheme](images/Countdown_des.png)
