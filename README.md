@@ -527,8 +527,8 @@ Inputs:
 * sub - decreases time on the timer
 * change - allows you to change time
 * sw - turns alarm on
-* btn
-* time_in
+* btn - turns the alarm off
+* time_in - tells how much time is set
 
 Outputs:
 * alarm_time - tells to when is the alarms set
