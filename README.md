@@ -463,13 +463,12 @@ Outputs:
 ![stopwatch_des](images/Stopwatch_des_V2.png)
 
 
-### [TImer]()
+### [Timer]()
 This compoment is what makes timer tick
 
 Components:
-* UD counter signaling
-* MX2
-* Flip_Flop
+* Set Time Value
+* Countdown
 
 Inputs:
 * button - button input, activates stopwatch
@@ -483,3 +482,23 @@ Outputs:
 * time_out - 32-bit, each number of the clock is carried in 4-bits
 
 ![Timer_sch](image/Timer_design.png)
+
+### [Set Time Value]()
+
+Inputs:
+* button - button input, activates stopwatch
+
+Outputs:
+* time_out - 32-bit, each number of the clock is carried in 4-bits
+
+![STV_scheme](images/Set_time_value_des.png)
+
+### [Countdown]()
+
+Inputs:
+* button - button input, activates stopwatch
+
+Outputs:
+* time_out - 32-bit, each number of the clock is carried in 4-bits
+* 
+![Countdown_scheme](images/Countdown_des.png)
