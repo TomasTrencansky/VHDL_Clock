@@ -419,7 +419,7 @@ Output :
 * add-out -
 
 Simulation
-![ud_counter_signaling_sim](images/UD_counter_signaling_waveform.png)
+![ud_counter_signaling_sim](images/UD_counter_signaling_waveform_V2.png)
 
 ### [Clock](https://github.com/TomasTrencansky/VHDL_Clock/blob/main/components/Clock/clock.vhd)
 This component makes the clock mode tick. It is composed of 3 components, has 5 inputs and 1 output. The output has 32 bits, witch every 4 bits carrying information about a different number.
@@ -441,7 +441,7 @@ Outputs:
 * time_out - 32-bit, each number of the clock is carried in 4-bits
 
 Schematic
-![clock_sch](images/clock_design.png)
+![clock_sch](images/clock_design_V2.png)
 
 ### [Stopwatch](https://github.com/TomasTrencansky/VHDL_Clock/tree/main/components/stopwatch)
 This component is what makes the stopwatch mode tick.
@@ -460,4 +460,4 @@ Inputs:
 Outputs:
 * time_out - 
 
-![stopwatch_des](images/stopwatch_design.png)
+![stopwatch_des](images/stopwatch_desing_V2.png)
